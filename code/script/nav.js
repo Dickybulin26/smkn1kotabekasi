@@ -8,3 +8,11 @@ addEventListener('scroll',()=>{
         nav.classList.remove('muncul')
     }
 })
+
+const hamburgerBtn = document.querySelector('.hamburger-menu');
+
+addEventListener('click', ({target})=>{
+    if(target == hamburgerBtn || [...hamburgerBtn.childNodes].includes(target)){
+        nav.classList.toggle('checked')
+    }
+})

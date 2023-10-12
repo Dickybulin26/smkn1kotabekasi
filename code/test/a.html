@@ -119,7 +119,7 @@
         </header>
 
         
-        <main class="warna1">
+        <main class="hitam">
             <div class="pengumuman category">
                 <div class="title">
                     <div class="text">Pengumuman</div>
@@ -220,7 +220,7 @@
             </div>
         </main>
 
-        <main class="warna1">
+        <main class="hitam">
             <div class="sambutan category">
                 <div class="title">
                     <div class="text">sambutan <br>kepala sekolah</div>
@@ -296,7 +296,7 @@
             </div>
         </main>
 
-        <main class="warna1">
+        <main class="hitam">
             <div class="prestasi category">
                 <div class="title">
                     <div class="text">Prestasi</div>
@@ -358,7 +358,7 @@
 
     </div>
 
-    <footer class="warna1">
+    <footer class="hitam">
         <div class="location">
             <div class="title"><img src="image/smkn-logo.png" alt=""> SMK NEGERI 1 KOTA BEKASI</div>
             <div class="desc">
@@ -398,6 +398,20 @@
         </div>
     </footer>
 
-    <script src="script/nav.js"></script>
+    <script>
+        let hideScroll = window.pageYOffset;
+        let currentScrollPos = window.pageYOffset
+        let nav = document.querySelector("nav")
+        addEventListener('scroll',()=>{
+            if (hideScroll < window.pageYOffset && !nav.classList.contains('sembunyi')) {
+                nav.classList.add('sembunyi')
+            } 
+            else if (hideScroll > window.pageYOffset && nav.classList.contains('sembunyi')) {
+                nav.classList.remove('sembunyi')
+            }
+            currentScrollPos = window.pageYOffset
+            hideScroll = currentScrollPos;
+        })
+    </script>
 </body>
 </html>

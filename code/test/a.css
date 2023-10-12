@@ -29,11 +29,11 @@ a{text-decoration: none; color: var(--hitam);}
 main{
     padding: var(--padding-container);
 }
-.warna1 {
+.hitam {
     background: var(--hitam);
     color: var(--putih);
 }
-.warna1 a{
+.hitam a{
     color: var(--putih);
 }
 
@@ -663,14 +663,14 @@ a{text-decoration: none; color: var(--hitam);}
 main{
     padding: var(--padding-container);
 }
-.warna1 {
+.hitam {
     background: var(--hitam);
     color: var(--putih);
 }
-.warna2 {
+.yellow {
     background: #F2D68D;
 }
-.warna1 a{
+.hitam a{
     color: var(--putih);
 }
 
