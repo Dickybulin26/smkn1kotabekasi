@@ -1107,6 +1107,7 @@ footer {
   display: flex;
   gap: 1rem;
   flex-direction: column;
+  margin-left: 2rem;
 }
 
 .footer .kanan .contact .title {
