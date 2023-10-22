@@ -9,6 +9,12 @@ addEventListener('scroll',()=>{
     }
 })
 
+const navlink = [...document.querySelectorAll('nav .nav .nav-link')]
+
+navlink.forEach((link,i)=>{
+    link.style.setProperty('--i', `${i * 0.1 + 0.5}s`) 
+})
+
 const hamburgerBtn = document.querySelector('.hamburger-menu');
 
 addEventListener('click', ({target})=>{
