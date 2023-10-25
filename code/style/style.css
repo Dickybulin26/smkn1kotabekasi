@@ -589,6 +589,10 @@ nav.checked .hamburger-menu-container .hamburger-menu div:after {
   padding-top: calc(var(--padding-container) + 2rem);
 }
 
+.container:has(.page-jurusan, .fasilitas-sekolah, .page-eskul) {
+  overflow: hidden
+}
+
 header {
   padding: 0 var(--padding-container);
 }
@@ -734,6 +738,11 @@ header {
   padding: 0.5rem 1rem;
   border: 1px solid gray;
   border-radius: 25rem;
+  transition: .2s ease-in-out;
+}
+.artikel .tags .tag:hover {
+  background: var(--primary2-background);
+  color: var(--putih);
 }
 .artikel .contents {
   display: grid;
@@ -1028,11 +1037,7 @@ footer {
   width: 100%;
   height: 100%;
 }
-.footer .kanan {
-  display: grid;
-  grid-template-rows: 1fr auto;
-  gap: 5rem;
-}
+
 .footer .kanan .contacts {
   display: flex;
   flex-wrap: wrap;
@@ -1061,12 +1066,13 @@ footer {
   align-items: center;
   gap: 1rem;
 }
-.footer .kanan .contacts .contact .text img {
-  width: 1.5rem;
+.footer .kanan .contacts .contact .text a:hover{
+  color: var(--primary2-background);
 }
-.footer .kanan .developer {
+.copyright {
   display: grid;
   place-items: center;
+  height: var(--padding-container);
 }
 /* 
 .footer {
@@ -1777,7 +1783,7 @@ footer {
 }
 .fasilitas-sekolah .content .title {
   font-weight: 500;
-  font-size: 2.5rem;
+  font-size: 2.3rem;
   color: var(--primary2-background);
 }
 .fasilitas-sekolah .content .desc {
@@ -1813,10 +1819,360 @@ footer {
     align-items: flex-end;
   }
 }
+
+
+.fasilitas-sekolah .contents {
+  display: grid;
+  gap: 10rem;
+}
+.fasilitas-sekolah .content {
+  display: flex;
+  gap: 3rem;
+}
+.fasilitas-sekolah .content:nth-child(2n) {
+  flex-direction: row-reverse;
+}
+.fasilitas-sekolah .content .galery {
+  width: 100%;
+  max-width: 70%;
+  height: 20rem;
+  display: flex;
+  gap: 1rem;
+  flex: 0.8;
+  position: relative;
+}
+.fasilitas-sekolah .content .galery::after {
+  z-index: -1;
+  content: "";
+  background: var(--hitam);
+  width: 100%;
+  height: 120%;
+  top: -10%;
+  position: absolute;
+}
+.fasilitas-sekolah .content:nth-child(2n-1) .galery::after {
+  left: -18%;
+}
+.fasilitas-sekolah .content:nth-child(2n) .galery::after {
+  right: -18%;
+}
+.fasilitas-sekolah .content:nth-child(2n) .text {
+  text-align: right;
+}
+
+.fasilitas-sekolah .content .galery .image {
+  border-radius: 1rem;
+  width: 100%;
+  height: 100%;
+}
+.fasilitas-sekolah .content .text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.fasilitas-sekolah .content .title {
+  font-weight: 500;
+  font-size: 2.3rem;
+  color: var(--primary2-background);
+}
+.fasilitas-sekolah .content .desc {
+  font-size: 1.3rem;
+}
+@media only screen and (max-width: 928px) {
+  .fasilitas-sekolah .content .title {
+    font-size: 2rem;
+  }
+  .fasilitas-sekolah .content .desc {
+    font-size: 1rem;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .fasilitas-sekolah .content .galery .image {
+    border-radius: 1rem;
+  }
+  .fasilitas-sekolah .content .galery {
+    height: 10rem;
+  }
+  .fasilitas-sekolah .content .title {
+    /* font-size: 1.5rem; */
+  }
+  .fasilitas-sekolah .content .desc {
+    /* font-size: .8rem; */
+  }
+  .fasilitas-sekolah .content {
+    flex-direction: column;
+  }
+  .fasilitas-sekolah .content:nth-child(2n) {
+    flex-direction: column;
+    align-items: flex-end;
+  }
+}
+
+/* ===== PAGE JURUSAN ===== */
+
+.page-jurusan .contents {
+  display: grid;
+  gap: 10rem;
+}
+
+.page-jurusan .content {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+.page-jurusan .content:nth-child(2n) {
+  flex-direction: row-reverse;
+}
+
+.page-jurusan .content .galery {
+  width: 100%;
+  max-width: 70%;
+  height: 25rem;
+  display: flex;
+  gap: 1rem;
+  flex: 0.8;
+  position: relative;
+}
+.page-jurusan .content .galery::after {
+  z-index: -1;
+  content: "";
+  /* background: var(--hitam); */
+  width: 100%;
+  top: 50%;
+  translate: 0 -50%;
+  border: 1px solid var(--primary2-background);
+  height: 150%;
+  border-radius: 50rem;
+  position: absolute;
+}
+
+.page-jurusan .content:nth-child(2n-1) .galery::after {
+  left: -18%;
+}
+
+.page-jurusan .content:nth-child(2n) .galery::after {
+  right: -18%;
+}
+.page-jurusan .content:nth-child(2n) .text {
+  text-align: right;
+  margin-left: 0;
+  margin-right: -10rem;
+}
+
+.page-jurusan .content .galery .image {
+  border-radius: 1rem;
+  width: 100%;
+  height: 100%;
+}
+
+.page-jurusan .content .text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  z-index: 1;
+  margin-left: -10rem;
+  border-radius: 0.75rem;
+  background: var(--putih);
+  padding: 1.5rem;
+  box-shadow: 0px 8px 44px 0px rgba(156, 185, 227, 0.15);
+  height: min-content;
+}
+
+.page-jurusan .content .title {
+  font-weight: 500;
+  font-size: 2.3rem;
+  color: var(--primary2-background);
+}
+
+.page-jurusan .content .desc {
+  font-size: 1.3rem;
+}
+
+@media only screen and (max-width: 928px) {
+  .page-jurusan .content .title {
+    font-size: 2rem;
+  }
+
+  .page-jurusan .content .desc {
+    font-size: 1rem;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .page-jurusan .content .galery .image {
+    border-radius: 1rem;
+  }
+
+  .page-jurusan .content .galery {
+    height: 10rem;
+  }
+
+  .page-jurusan .content .title {
+    /* font-size: 1.5rem; */
+  }
+
+  .page-jurusan .content .desc {
+    /* font-size: .8rem; */
+  }
+
+  .page-jurusan .content {
+    flex-direction: column;
+    align-items: unset;
+  }
+
+  .page-jurusan .content:nth-child(2n) {
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  .page-jurusan .content .text {
+    margin-left: 0;
+  }
+  .page-jurusan .content:nth-child(2n) .text {
+    margin-right: 0;
+  }
+}
+
+/* ===== PAGE EKSTRAKULIKULER ===== */
+
+.page-ekstrakulikuler .contents {
+  display: grid;
+  gap: 10rem;
+}
+
+.page-ekstrakulikuler .content {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+.page-ekstrakulikuler .content:nth-child(2n) {
+  flex-direction: row-reverse;
+}
+
+.page-ekstrakulikuler .content .galery {
+  width: 100%;
+  max-width: 70%;
+  height: 25rem;
+  display: flex;
+  gap: 1rem;
+  flex: 0.8;
+  position: relative;
+}
+
+.page-ekstrakulikuler .content .galery::after {
+  z-index: -1;
+  content: "";
+  width: 100%;
+  top: 15%;
+  border: 1px solid var(--primary2-background);
+  height: 100%;
+  border-radius: 2rem;
+  position: absolute;
+}
+
+.page-ekstrakulikuler .content:nth-child(2n-1) .galery::after {
+  left: -18%;
+}
+
+.page-ekstrakulikuler .content:nth-child(2n) .galery::after {
+  right: -18%;
+}
+
+.page-ekstrakulikuler .content:nth-child(2n) .text {
+  text-align: right;
+  margin-left: 0;
+  margin-right: -10rem;
+}
+
+.page-ekstrakulikuler .content .galery .image {
+  border-radius: 1rem;
+  width: 100%;
+  height: 100%;
+}
+
+.page-ekstrakulikuler .content .text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  z-index: 1;
+  margin-left: -10rem;
+  border-radius: 0.75rem;
+  background: var(--putih);
+  padding: 1.5rem;
+  box-shadow: 0px 8px 44px 0px rgba(156, 185, 227, 0.15);
+  height: min-content;
+}
+
+.page-ekstrakulikuler .content .title {
+  font-weight: 500;
+  font-size: 2.3rem;
+  color: var(--primary2-background);
+}
+
+.page-ekstrakulikuler .content .desc {
+  font-size: 1.3rem;
+}
+
+@media only screen and (max-width: 928px) {
+  .page-ekstrakulikuler .content .title {
+    font-size: 2rem;
+  }
+
+  .page-ekstrakulikuler .content .desc {
+    font-size: 1rem;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .page-ekstrakulikuler .content .galery .image {
+    border-radius: 1rem;
+  }
+
+  .page-ekstrakulikuler .content .galery {
+    height: 10rem;
+  }
+
+  .page-ekstrakulikuler .content .title {
+    /* font-size: 1.5rem; */
+  }
+
+  .page-ekstrakulikuler .content .desc {
+    /* font-size: .8rem; */
+  }
+
+  .page-ekstrakulikuler .content {
+    flex-direction: column;
+    align-items: unset;
+  }
+
+  .page-ekstrakulikuler .content:nth-child(2n) {
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  .page-ekstrakulikuler .content .text {
+    margin-left: 0;
+  }
+
+  .page-ekstrakulikuler .content:nth-child(2n) .text {
+    margin-right: 0;
+  }
+}
 /* PAGE GALERY */
 .picture .tags .tag,
 .galery .tags .tag {
   margin: 0;
+  transition: .3s ease-in-out;
+}
+.picture .tags .tag:hover ,
+.galery .tags .tag:hover {
+  background: var(--primary2-background);
+  color: var(--putih);
 }
 .galery > .desc,
 .picture > .desc {
@@ -1977,6 +2333,7 @@ footer {
 .developer .contents .content:hover .detail {
   display: initial;
 }
+
 @media only screen and (max-width: 928px) {
   .developer .contents {
     flex-direction: column;

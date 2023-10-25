@@ -1,6 +1,6 @@
 
 
-# <img src="/code/image/smkn-logo.png"/> SMKN 1 KOTA BEKASI
+# <a href="https://dickybulin26.github.io/smkn1kotabekasi/"><img src="/code/image/smkn-logo.png"/> SMKN 1 KOTA BEKASI</a>
 
 ## **Repository untuk WEB SMKN 1 Kota Bekasi**
 
