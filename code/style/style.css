@@ -672,6 +672,7 @@ header {
 .pengumuman .tags .tag {
   padding: 0.5rem 1rem;
   border: 1px solid var(--putih);
+  margin-right: 10px;
 }
 .pengumuman .contents {
   display: grid;
@@ -702,6 +703,7 @@ header {
 .agenda .tags .tag {
   padding: 0.5rem 1rem;
   border: 1px solid var(--putih);
+  margin-right: 10px;
 }
 
 .agenda .contents {
@@ -739,6 +741,7 @@ header {
   border: 1px solid gray;
   border-radius: 25rem;
   transition: .2s ease-in-out;
+  margin-right: 10px;
 }
 .artikel .tags .tag:hover {
   background: var(--primary2-background);
@@ -1657,6 +1660,7 @@ footer {
 .blud .tags .tag {
   margin-top: 3rem;
   border: 1px solid gray;
+  margin-right: 10px;
 }
 
 .blud .contents {
@@ -2168,6 +2172,7 @@ footer {
 .galery .tags .tag {
   margin: 0;
   transition: .3s ease-in-out;
+  margin-right: 10px;
 }
 .picture .tags .tag:hover ,
 .galery .tags .tag:hover {
