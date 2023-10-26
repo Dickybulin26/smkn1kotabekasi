@@ -595,6 +595,7 @@ nav.checked .hamburger-menu-container .hamburger-menu div:after {
 
 header {
   padding: 0 var(--padding-container);
+  overflow: hidden;
 }
 
 /* kasih jarak ke navbar */
@@ -647,16 +648,74 @@ header {
 
 /* -----COMPANY----- */
 
+
 .company-provile {
   margin-top: -5rem;
   justify-self: right;
-}
-.company-provile img {
+  position: relative;
   width: 30rem;
+  transform: rotate(10deg);
+}
+.company-provile > img {
+  width: 100%;
+  top: 0rem;
+  left: 0rem;
+  position: absolute;
+  transform: rotate(-10deg);
 }
 
+/* -----SLIDER ----- */
+.carousel-container {
+  width: 70%;
+  height: 13rem;
+  position: relative;
+  top: 10rem;
+  left: 8rem;
+}
+.carousel-item {
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+.carousel-item img {
+  width: 100%;
+  height: 100%;
+  border-radius: 1rem;
+}
+.company-provile button {
+  position: absolute;
+  z-index: 99;
+  top: 15rem;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 100rem;
+  border: none;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(1rem);
+  color: white;
+  cursor: pointer;
+}
+.company-provile .prevBtn {
+  left: 23%;
+}
+.company-provile .nextBtn {
+  right: 0%;
+}
+.company-provile .text {
+  position: absolute;;
+  z-index: 9;
+  bottom: 8.5rem;
+  left: 9rem;
+  color: var(--putih);
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: .5rem;
+  border-radius: .5rem;
+  backdrop-filter: blur(1rem);
+}
+
+
 .logo-company {
-  margin: 3rem auto 5rem;
+  margin: 5rem auto 5rem;
   display: flex;
   flex-wrap: wrap;
   gap: 5rem;
@@ -1024,8 +1083,9 @@ footer {
 }
 .footer .kiri {
   display: grid;
-  grid-template-rows: auto auto 15rem;
+  grid-template-rows: auto auto 1fr;
   gap: 1rem;
+  min-width: 18rem;
 }
 .footer .kiri .title {
   height: 2rem;
@@ -1039,12 +1099,15 @@ footer {
 .footer .kiri .maps {
   width: 100%;
   height: 100%;
+  min-height: 15rem;
 }
 
 .footer .kanan .contacts {
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
+  justify-content: space-between;
+  min-width: 25rem;
 }
 
 .footer .kanan .contacts .contact {
@@ -1118,11 +1181,9 @@ footer {
 .footer .location .title img {
   width: 3rem;
 } */
-
-@media only screen and (min-width: 929px) {
-  .footer .kiri {
-    min-width: 20rem;
-    max-width: 25rem;
+@media only screen and (max-width: 1225px) {
+  .footer {
+    grid-template-columns: auto auto;
   }
 }
 
@@ -1215,19 +1276,6 @@ footer {
   .footer {
     grid-template-columns: 1fr;
   }
-  /* 
-  
-  .footer .contact .content,
-  .footer .location {
-    gap: 1rem;
-  }
-  .footer {
-    grid-template-columns: 1fr;
-    gap: 8rem;
-  }
-  .footer .contact .title {
-    font-weight: bold;
-  } */
 }
 
 /* PERANGKAT-ANDROID */
@@ -2342,6 +2390,7 @@ footer {
 @media only screen and (max-width: 928px) {
   .developer .contents {
     flex-direction: column;
+    height: 50rem;
   }
 }
 /* @media only screen and (max-width: 928px) {
