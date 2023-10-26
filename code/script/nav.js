@@ -9,11 +9,6 @@ addEventListener('scroll',()=>{
     }
 })
 
-const navlink = [...document.querySelectorAll('nav .nav .nav-link')]
-
-navlink.forEach((link,i)=>{
-    link.style.setProperty('--i', `${i * 0.1 + 0.5}s`) 
-})
 
 const hamburgerBtn = document.querySelector('.hamburger-menu');
 
@@ -21,4 +16,26 @@ addEventListener('click', ({target})=>{
     if(target == hamburgerBtn || [...hamburgerBtn.childNodes].includes(target)){
         nav.classList.toggle('checked')
     }
+})
+
+const navLink = [...document.querySelectorAll('.nav-link')]
+const dropLink = [...document.querySelectorAll('.dropdown-link')];
+
+navLink.forEach((link,i)=>{
+    link.style.setProperty('--i', `${i * 0.1 + 0.5}s`) 
+})
+
+addEventListener('click', ({target})=>{
+    
+    navLink.forEach((link,i)=>{
+        if(target == link.childNodes[1]){
+            link.classList.toggle('clicked')
+        }
+    })
+    dropLink.forEach((link,i)=>{
+        if(target == link.childNodes[1]){
+            link.classList.toggle('clicked')
+        }
+    })
+    
 })

@@ -199,7 +199,7 @@ nav a {
 
 nav {
   padding: 1.5rem var(--padding-container);
-  font-size: 0.85rem;
+  font-size: .8rem;
   transition: 0.5s;
   position: fixed;
   top: 0px;
@@ -225,7 +225,7 @@ nav .nav-btn {
 
 nav.muncul .logo,
 nav:hover .logo {
-  font-size: 0.9rem;
+  font-size: 1rem;
 }
 
 nav.muncul,
@@ -262,14 +262,6 @@ nav .btn {
   text-transform: uppercase;
 }
 
-nav .btn.solid,
-nav .btn.transparent:hover {
-}
-
-nav .btn.transparent,
-nav .btn.solid:hover {
-}
-
 nav .nav-links > ul {
   display: flex;
   justify-content: center;
@@ -291,12 +283,6 @@ nav .nav-link > a {
   border-radius: 0.3rem;
 }
 
-nav .nav-link:hover > a {
-  /* transform: scale(1.1); */
-  background: var(--primary2-background);
-  color: var(--putih);
-}
-
 nav .dropdown {
   position: absolute;
   top: 100%;
@@ -309,13 +295,6 @@ nav .dropdown {
   transition: 0.5s;
   padding-top: 0.5rem;
 }
-nav .dropdown-link:hover > a {
-  background: var(--primary2-background);
-  border-radius: 0.3rem;
-}
-nav .dropdown .dropdown-link:hover > a {
-  color: var(--putih);
-}
 
 nav .dropdown ul {
   position: relative;
@@ -327,7 +306,7 @@ nav .dropdown ul {
 nav .dropdown-link > a {
   display: flex;
   padding: 0.5rem 1rem;
-  font-size: 0.9rem;
+  font-size: 1rem;
   align-items: center;
   justify-content: space-between;
   transition: 0.3s;
@@ -367,12 +346,6 @@ nav .dropdown.second {
   transform: translateX(10px);
 }
 
-nav .nav-link:hover > .dropdown,
-nav .dropdown-link:hover > .dropdown {
-  transform: translate(0, 0);
-  opacity: 1;
-  pointer-events: auto;
-}
 
 nav .hamburger-menu-container {
   display: none;
@@ -446,11 +419,35 @@ nav.checked .hamburger-menu-container .hamburger-menu div:after {
   transition: 0.5s ease-in-out;
   font-size: 1.2rem;
 }
-.dropdown-link:has(.dropdown):hover > a::after,
-.nav-link:has(.dropdown):hover > a::after {
-  transform: translateY(-50%) rotate(90deg);
-  color: white;
-}
+
+nav .nav-link:active > a {
+    /* transform: scale(1.1); */
+    background: var(--primary2-background);
+    color: var(--putih);
+  }
+  
+  nav .nav-link:hover > .dropdown,
+  nav .dropdown-link:hover > .dropdown {
+    transform: translate(0, 0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  nav .dropdown-link:active > a {
+    background: var(--primary2-background);
+    border-radius: 0.3rem;
+    color: var(--putih);
+  }
+  nav .dropdown .dropdown-link:hover > a {
+    color: var(--putih);
+  }
+  
+  .dropdown-link:has(.dropdown):hover > a::after,
+  .nav-link:has(.dropdown):hover > a::after {
+    transform: translateY(-50%) rotate(90deg);
+    color: white;
+  }
+
 
 @keyframes animation {
   from {
@@ -463,6 +460,35 @@ nav.checked .hamburger-menu-container .hamburger-menu div:after {
   }
 }
 
+@media only screen and (min-width: 1280px) {
+  nav .nav-link:hover > a {
+    /* transform: scale(1.1); */
+    background: var(--primary2-background);
+    color: var(--putih);
+  }
+  
+  nav .nav-link:hover > .dropdown,
+  nav .dropdown-link:hover > .dropdown {
+    transform: translate(0, 0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  nav .dropdown-link:hover > a {
+    background: var(--primary2-background);
+    border-radius: 0.3rem;
+  }
+  nav .dropdown .dropdown-link:hover > a {
+    color: var(--putih);
+  }
+  
+  .dropdown-link:has(.dropdown):hover > a::after,
+  .nav-link:has(.dropdown):hover > a::after {
+    transform: translateY(-50%) rotate(90deg);
+    color: white;
+  }
+}
+
 @media only screen and (max-width: 600px) {
   nav .nav-btn {
     width: 100% !important;
@@ -470,6 +496,39 @@ nav.checked .hamburger-menu-container .hamburger-menu div:after {
 }
 
 @media only screen and (max-width: 1280px) {
+  
+  nav .nav-links .nav-link > a {
+    font-size: 1rem !important;
+  }
+  nav .nav-link.clicked > a {
+    /* transform: scale(1.1); */
+    background: var(--primary2-background);
+    color: var(--putih);
+  }
+
+  nav .nav-link.clicked > .dropdown,
+  nav .dropdown-link.clicked > .dropdown {
+    transform: translate(0, 0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  nav .dropdown-link.clicked > a {
+    background: var(--primary2-background);
+    border-radius: 0.3rem;
+  }
+  nav .dropdown .dropdown-link.clicked > a {
+    color: var(--putih);
+  }
+
+  .dropdown-link:has(.dropdown).clicked > a::after,
+  .nav-link:has(.dropdown).clicked > a::after {
+    transform: translateY(-50%) rotate(90deg);
+    color: white;
+  }
+
+
+
   nav.muncul {
     padding: 1.2rem var(--padding-container);
   }
@@ -519,7 +578,7 @@ nav.checked .hamburger-menu-container .hamburger-menu div:after {
     padding: 1.6rem 2rem;
   }
 
-  nav .nav-link:hover > a {
+  nav .nav-link.clicked > a {
     transform: scale(1);
   }
 
@@ -528,9 +587,8 @@ nav.checked .hamburger-menu-container .hamburger-menu div:after {
   }
   nav .dropdown ul {
     box-shadow: none;
-  }
-  nav .dropdown ul {
     border-left: 1px solid black;
+    background: rgba(0, 0, 0, 0.05);
   }
 
   nav .dropdown,
@@ -546,14 +604,14 @@ nav.checked .hamburger-menu-container .hamburger-menu div:after {
     display: none;
   }
 
-  nav .nav-link:hover > .dropdown,
-  nav .dropdown-link:hover > .dropdown {
+  nav .nav-link.clicked > .dropdown,
+  nav .dropdown-link.clicked > .dropdown {
     display: block;
   }
 
   .dropdown-link:has(.dropdown) > a::after,
   .nav-link:has(.dropdown) > a::after {
-    right: var(--padding-container);
+    right: 2rem;
   }
   nav .dropdown-link > a {
     padding: 1.2rem 2rem;
@@ -654,6 +712,7 @@ header {
   justify-self: right;
   position: relative;
   width: 30rem;
+  height: 30rem;
   transform: rotate(10deg);
 }
 .company-provile > img {
@@ -680,7 +739,7 @@ header {
 .carousel-item img {
   width: 100%;
   height: 100%;
-  border-radius: 1rem;
+  border-radius: .5rem;
 }
 .company-provile button {
   position: absolute;
@@ -866,9 +925,6 @@ header {
   width: 100%;
   border-radius: 0;
   transform: skew(0);
-}
-.artikel .contents .content:hover .date img {
-  filter: brightness(10);
 }
 
 /* -----SAMBUTAN-KEPALA-SEKOLAH----- */
@@ -1202,12 +1258,16 @@ footer {
   .hero .text .title {
     font-size: 2rem;
   }
-
   .logo-company img {
     height: 3rem;
   }
   .logo-company {
     gap: 1rem;
+  }
+  .company-provile {
+    left: -2rem;
+    margin-top: -8rem;
+    margin-bottom: -3rem;
   }
 
   /* .container {
@@ -1539,6 +1599,9 @@ footer {
 }
 /* ======= PAGE PROFIL-JURUSAN ======= */
 
+.profil-jurusan .title {
+  max-width: 70vw;
+}
 .profil-jurusan .contents {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -2346,6 +2409,12 @@ footer {
 .developer .contents .content .image {
   width: 100%;
   height: 100%;
+  filter: grayscale(1);
+  transition: 1s ease-in-out;
+}
+
+.developer .contents .content:hover .image {
+  filter: grayscale(0);
 }
 .developer .contents .content .info {
   position: absolute;
@@ -2370,6 +2439,19 @@ footer {
   color: var(--putih);
   z-index: 2;
   display: none;
+}
+.developer .contents .content .detail .contact {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  width: 50%;
+  gap: 1rem;
+  align-items: center;
+  font-size: 1.3rem;
+}
+.developer .contents .content .detail .contact .garis{
+  background: var(--putih);
+  height: 2px;
 }
 .developer .contents .content .detail .hello {
   font-size: 1.3rem;
