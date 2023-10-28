@@ -709,7 +709,7 @@ header {
 
 .company-provile {
   margin-top: -5rem;
-  justify-self: right;
+  justify-self: center;
   position: relative;
   width: 30rem;
   height: 30rem;
@@ -736,10 +736,11 @@ header {
   height: 100%;
   display: none;
 }
-.carousel-item img {
+.carousel-item iframe {
   width: 100%;
   height: 100%;
   border-radius: .5rem;
+  background: var(--hitam);
 }
 .company-provile button {
   position: absolute;
@@ -763,8 +764,8 @@ header {
 .company-provile .text {
   position: absolute;;
   z-index: 9;
-  bottom: 8.5rem;
-  left: 9rem;
+  bottom: 1rem;
+  left: 1rem;
   color: var(--putih);
   background-color: rgba(0, 0, 0, 0.5);
   padding: .5rem;
@@ -1053,8 +1054,11 @@ header {
   background: #00000099;
   backdrop-filter: blur(1rem);
 }
-
-/* -----TENAGA KEPENDIDIKAN----- */
+@media only screen and (max-width: 1168px) {
+  .prestasi .contents .content.hide {
+    display: none;
+  }
+}
 
 /* -----TENAGA KEPENDIDIKAN----- */
 
@@ -1065,15 +1069,12 @@ header {
   padding: 2rem;
 }
 .tenaga-kependidikan .contents .content {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
   width: 100%;
   max-width: 17rem;
   height: 20rem;
   position: relative;
 }
-.tenaga-kependidikan .contents .content:nth-child(1) {
+.tenaga-kependidikan .contents .content.hide {
   display: none;
 }
 .tenaga-kependidikan .contents .content .text {
@@ -1325,7 +1326,7 @@ footer {
   .tenaga-kependidikan .contents .content {
     height: 20rem;
   }
-  .tenaga-kependidikan .contents .content:nth-child(1) {
+  .tenaga-kependidikan .contents .content.hide {
     display: flex;
   }
   .tenaga-kependidikan .contents .content::before,
@@ -1335,6 +1336,10 @@ footer {
   }
   .footer {
     grid-template-columns: 1fr;
+  }
+  
+  .footer .kanan .contacts {
+    /* flex-wrap: nowrap; */
   }
 }
 
@@ -1388,6 +1393,9 @@ footer {
 
   .tenaga-kependidikan .contents .content .text .nama {
     font-size: 0.8rem;
+  }
+  .footer .kanan .contacts {
+    flex-wrap: wrap;
   }
 }
 
