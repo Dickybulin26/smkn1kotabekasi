@@ -199,7 +199,7 @@ nav a {
 
 nav {
   padding: 1.5rem var(--padding-container);
-  font-size: .8rem;
+  font-size: 0.8rem;
   transition: 0.5s;
   position: fixed;
   top: 0px;
@@ -346,7 +346,6 @@ nav .dropdown.second {
   transform: translateX(10px);
 }
 
-
 nav .hamburger-menu-container {
   display: none;
   align-items: center;
@@ -421,33 +420,32 @@ nav.checked .hamburger-menu-container .hamburger-menu div:after {
 }
 
 nav .nav-link:active > a {
-    /* transform: scale(1.1); */
-    background: var(--primary2-background);
-    color: var(--putih);
-  }
-  
-  nav .nav-link:hover > .dropdown,
-  nav .dropdown-link:hover > .dropdown {
-    transform: translate(0, 0);
-    opacity: 1;
-    pointer-events: auto;
-  }
+  /* transform: scale(1.1); */
+  background: var(--primary2-background);
+  color: var(--putih);
+}
 
-  nav .dropdown-link:active > a {
-    background: var(--primary2-background);
-    border-radius: 0.3rem;
-    color: var(--putih);
-  }
-  nav .dropdown .dropdown-link:hover > a {
-    color: var(--putih);
-  }
-  
-  .dropdown-link:has(.dropdown):hover > a::after,
-  .nav-link:has(.dropdown):hover > a::after {
-    transform: translateY(-50%) rotate(90deg);
-    color: white;
-  }
+nav .nav-link:hover > .dropdown,
+nav .dropdown-link:hover > .dropdown {
+  transform: translate(0, 0);
+  opacity: 1;
+  pointer-events: auto;
+}
 
+nav .dropdown-link:active > a {
+  background: var(--primary2-background);
+  border-radius: 0.3rem;
+  color: var(--putih);
+}
+nav .dropdown .dropdown-link:hover > a {
+  color: var(--putih);
+}
+
+.dropdown-link:has(.dropdown):hover > a::after,
+.nav-link:has(.dropdown):hover > a::after {
+  transform: translateY(-50%) rotate(90deg);
+  color: white;
+}
 
 @keyframes animation {
   from {
@@ -466,7 +464,7 @@ nav .nav-link:active > a {
     background: var(--primary2-background);
     color: var(--putih);
   }
-  
+
   nav .nav-link:hover > .dropdown,
   nav .dropdown-link:hover > .dropdown {
     transform: translate(0, 0);
@@ -481,7 +479,7 @@ nav .nav-link:active > a {
   nav .dropdown .dropdown-link:hover > a {
     color: var(--putih);
   }
-  
+
   .dropdown-link:has(.dropdown):hover > a::after,
   .nav-link:has(.dropdown):hover > a::after {
     transform: translateY(-50%) rotate(90deg);
@@ -496,7 +494,6 @@ nav .nav-link:active > a {
 }
 
 @media only screen and (max-width: 1280px) {
-  
   nav .nav-links .nav-link > a {
     font-size: 1rem !important;
   }
@@ -526,8 +523,6 @@ nav .nav-link:active > a {
     transform: translateY(-50%) rotate(90deg);
     color: white;
   }
-
-
 
   nav.muncul {
     padding: 1.2rem var(--padding-container);
@@ -648,7 +643,7 @@ nav .nav-link:active > a {
 }
 
 .container:has(.page-jurusan, .fasilitas-sekolah, .page-eskul) {
-  overflow: hidden
+  overflow: hidden;
 }
 
 header {
@@ -706,7 +701,6 @@ header {
 
 /* -----COMPANY----- */
 
-
 .company-provile {
   margin-top: -5rem;
   justify-self: center;
@@ -739,7 +733,7 @@ header {
 .carousel-item iframe {
   width: 100%;
   height: 100%;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   background: var(--hitam);
 }
 .company-provile button {
@@ -762,17 +756,16 @@ header {
   right: 0%;
 }
 .company-provile .text {
-  position: absolute;;
+  position: absolute;
   z-index: 9;
   bottom: 1rem;
   left: 1rem;
   color: var(--putih);
   background-color: rgba(0, 0, 0, 0.5);
-  padding: .5rem;
-  border-radius: .5rem;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
   backdrop-filter: blur(1rem);
 }
-
 
 .logo-company {
   margin: 5rem auto 5rem;
@@ -785,7 +778,6 @@ header {
   height: 2vw;
   max-height: 2rem;
 }
-
 /* -----PENGUMUMAN-AND-AGENDA----- */
 
 .pengumuman .tags .tag {
@@ -859,7 +851,7 @@ header {
   padding: 0.5rem 1rem;
   border: 1px solid gray;
   border-radius: 25rem;
-  transition: .2s ease-in-out;
+  transition: 0.2s ease-in-out;
   margin-right: 10px;
 }
 .artikel .tags .tag:hover {
@@ -1189,7 +1181,7 @@ footer {
   align-items: center;
   gap: 1rem;
 }
-.footer .kanan .contacts .contact .text a:hover{
+.footer .kanan .contacts .contact .text a:hover {
   color: var(--primary2-background);
 }
 .copyright {
@@ -1337,7 +1329,7 @@ footer {
   .footer {
     grid-template-columns: 1fr;
   }
-  
+
   .footer .kanan .contacts {
     /* flex-wrap: nowrap; */
   }
@@ -1814,6 +1806,93 @@ footer {
   height: 12rem;
   border-radius: 0.5rem;
 }
+.blud .modal-container{
+  z-index: 9999;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+  background-color: var(--putih);
+  box-shadow: 0 0 0 100vh #000000ad;
+  border-radius: 1rem;
+}
+.blud .modal-container.active{
+  display: initial;
+  animation: opacity 1s;
+}
+@keyframes opacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.blud .modal-box{
+  width: 70vw;
+  display: grid;
+  grid-template-columns: .8fr 1fr;
+  gap: 2rem;
+  align-items: center;
+  padding: 1rem;
+}
+.blud .modal-box .exit{
+  position: absolute;
+  top: -3%;
+  right: 3%;
+  font-size: 2rem;
+  cursor: pointer;
+  color: var(--hitam);
+}
+.blud .modal-box .image {
+  height: 30rem;
+  border-radius: 1rem;
+}
+.blud .modal-box .author{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.blud .modal-box .author img{
+  height: 4rem;
+}
+.blud .modal-box .author .text{
+  display: grid;
+}
+.blud .modal-box .text{
+  display: grid;
+  gap: .5rem;
+  position: relative;
+}
+.blud .modal-box .text .price{
+  font-size: 1.7rem;
+  color: red;
+  text-transform: capitalize;
+}
+.blud .modal-box .text button{
+  padding: 1rem;
+  background: #0BA937;
+  border-radius: .5rem;
+  border: none;
+  color: white;
+  width: fit-content;
+  margin-top: 1rem;
+  cursor: pointer;
+}
+.blud .modal-box .text > .title{
+  font-weight: 500;
+  font-size: 2rem;
+}
+.blud .modal-box .author .text .kelas{
+  font-size: .8rem;
+}
+.blud .modal-box .desc .text{
+  font-size: 1rem;
+  margin-top: .3rem;
+  font-weight: 200;
+}
 @media only screen and (max-width: 928px) {
   .blud .iklan {
     height: 20rem;
@@ -1942,7 +2021,6 @@ footer {
     align-items: flex-end;
   }
 }
-
 
 .fasilitas-sekolah .contents {
   display: grid;
@@ -2290,10 +2368,10 @@ footer {
 .picture .tags .tag,
 .galery .tags .tag {
   margin: 0;
-  transition: .3s ease-in-out;
+  transition: 0.3s ease-in-out;
   margin-right: 10px;
 }
-.picture .tags .tag:hover ,
+.picture .tags .tag:hover,
 .galery .tags .tag:hover {
   background: var(--primary2-background);
   color: var(--putih);
@@ -2332,6 +2410,50 @@ footer {
   height: 12rem;
   border-radius: 0.5rem;
 }
+
+.galery .modal-container{
+  z-index: 9999;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--putih);
+  box-shadow: 0 0 0 100vh #000000ad;
+  border-radius: 1rem;
+}
+.galery .modal-container.active{
+  display: initial;
+  animation: opacity 1s;
+}
+
+@keyframes opacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.galery .modal-box{
+  width: 60vw;
+  gap: 2rem;
+  align-items: center;
+  padding: 1rem;
+}
+.galery .modal-box .image{
+  height: 30rem;
+}
+
+.galery .modal-box .text {
+  padding: 1rem;
+}
+.galery .modal-box .text .desc {
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+
+
 
 @media only screen and (max-width: 600px) {
   .picture .contents {
@@ -2457,7 +2579,7 @@ footer {
   align-items: center;
   font-size: 1.3rem;
 }
-.developer .contents .content .detail .contact .garis{
+.developer .contents .content .detail .contact .garis {
   background: var(--putih);
   height: 2px;
 }
@@ -2488,3 +2610,68 @@ footer {
     grid-template-columns: repeat(2, 1fr);
   }
 } */
+.detail-article > .image {
+  position: relative;
+  border-radius: 1rem;
+  box-shadow: 0 0 1rem #00000022;
+  width: 100%;
+  height: 30rem;
+}
+.detail-article > .image::before {
+  content: "";
+  width: 100%;
+  height: 0%;
+  box-shadow: 0 0 10rem 10rem #000000ad, 0 0 3rem 2rem rgb(0, 0, 0);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+}
+.detail-article > .image .text {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 2rem;
+  color: var(--putih);
+  z-index: 1;
+  width: 90%;
+  display: grid;
+}
+.detail-article .text .author{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.detail-article .text .author img{
+  height: 3rem;
+}
+.detail-article .text .title{
+  font-size: 1.8rem;
+}
+.detail-article .text .date{
+  font-weight: 100;
+}
+
+.detail-article .contents{
+  font-size: 1.1rem;
+  line-height: 2rem;
+  text-align: justify;
+  padding: 0 2rem;
+  display: grid;
+  gap: 1rem;
+}
+.detail-article .contents .image{
+  width: 60%;
+  border-radius: 1rem;
+}
+.detail-article .contents .kiri .image{
+  float: left;
+  padding-right: 2rem;
+}
+.detail-article .contents .kanan .image{
+  float: right;
+  padding-left: 2rem;
+}
+.detail-article .contents .tengah .image{
+  width: 100%;
+}

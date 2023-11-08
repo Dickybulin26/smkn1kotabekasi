@@ -1,29 +1,52 @@
-const carouselItems = document.querySelectorAll('.carousel-item');
-let currentIndex = 0;
-
-function showSlide(index) {
-  // Hide all carousel items
-  carouselItems.forEach(item => {
+function showSlide(card,dpl) {
+  card.items.forEach(item => {
     item.style.display = 'none';
-  });
+  })
 
-  // Show the slide at the specified index
-  carouselItems[index].style.display = 'block';
+  card.items[card.index].style.display = dpl;
 }
 
-function nextSlide() {
-  currentIndex = (currentIndex + 1) % carouselItems.length;
-  showSlide(currentIndex);
+function nextSlide(card,dpl) {
+  card.index = (card.index + 1) % card.items.length;
+  showSlide(card,dpl);
 }
-
-function previousSlide() {
-  currentIndex = (currentIndex - 1 + carouselItems.length) % carouselItems.length;
-  showSlide(currentIndex);
+function previousSlide(card,dpl) {
+  card.index = (card.index - 1 + card.items.length) % card.items.length;
+  showSlide(card,dpl);
 }
+function allslide(card,dpl){
+  card.items.forEach(item => {
+    item.style.display = dpl;
+  })
+}
+const carousel = [
+  {
+    items: document.querySelectorAll('.carousel-item'),
+    index: 0
+  },
+  {
+    items: document.querySelectorAll('.carousel-item-auto'),
+    index: 0
+  }
+]
 
-// Show the first slide initially
-showSlide(currentIndex);
+document.querySelector('.nextBtn').addEventListener('click', ()=>{
+  nextSlide(carousel[0],'block')
+})
+document.querySelector('.prevBtn').addEventListener('click', ()=>{
+  previousSlide(carousel[0],'block')
+});
 
-// Set up event listeners for next and previous buttons
-document.querySelector('.nextBtn').addEventListener('click', nextSlide);
-document.querySelector('.prevBtn').addEventListener('click', previousSlide);
+showSlide(carousel[0],'block');
+
+function asdf(){
+  if (window.matchMedia('screen and (max-width: 768px)').matches) {
+    nextSlide(carousel[1],'flex');
+  }
+  else {
+    allslide(carousel[1],'flex');
+  }
+
+  setTimeout(asdf,1000)
+}
+asdf()
