@@ -1818,7 +1818,8 @@ footer {
   border-radius: 1rem;
 }
 .blud .modal-container.active{
-  display: initial;
+  display: flex;
+  flex-direction: column;
   animation: opacity 1s;
 }
 @keyframes opacity {
@@ -1837,11 +1838,12 @@ footer {
   gap: 2rem;
   align-items: center;
   padding: 1rem;
+  position: relative;
 }
 .blud .modal-box .exit{
-  position: absolute;
-  top: -3%;
-  right: 3%;
+  align-self: flex-end;
+  width: fit-content;
+  padding-right: 1rem;
   font-size: 2rem;
   cursor: pointer;
   color: var(--hitam);
@@ -1862,9 +1864,9 @@ footer {
   display: grid;
 }
 .blud .modal-box .text{
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: .5rem;
-  position: relative;
 }
 .blud .modal-box .text .price{
   font-size: 1.7rem;
@@ -1889,13 +1891,34 @@ footer {
   font-size: .8rem;
 }
 .blud .modal-box .desc .text{
-  font-size: 1rem;
+  font-size: .8rem;
   margin-top: .3rem;
-  font-weight: 200;
+  font-weight: 400;
 }
 @media only screen and (max-width: 928px) {
   .blud .iklan {
     height: 20rem;
+  }
+  
+  .blud .modal-box{
+    grid-template-columns: 1fr;
+    gap: 0;
+    padding-top: 4rem;
+  }
+  .blud .modal-box .image {
+    height: 15rem;
+  }
+  .blud .modal-box .exit{
+    position: absolute;
+    top: .5rem;
+  }
+  .blud .modal-box .text > .title{
+    font-size: 1.3rem;
+  }
+  .blud .modal-box .text .price{
+    font-size: 1rem;
+    color: red;
+    text-transform: capitalize;
   }
 }
 @media only screen and (max-width: 600px) {
@@ -2275,7 +2298,7 @@ footer {
   position: absolute;
 }
 
-.page-ekstrakulikuler .content:nth-child(2n-1) .galery::after {
+.page-ekstrakulikuler .content:nth-child(odd) .galery::after {
   left: -18%;
 }
 
@@ -2420,12 +2443,13 @@ footer {
   background-color: var(--putih);
   box-shadow: 0 0 0 100vh #000000ad;
   border-radius: 1rem;
+  display: none;
 }
 .galery .modal-container.active{
-  display: initial;
+  display: flex;
+  flex-direction: column;
   animation: opacity 1s;
 }
-
 @keyframes opacity {
   0% {
     opacity: 0;
@@ -2434,6 +2458,15 @@ footer {
     opacity: 1;
   }
 }
+.galery .modal-container .exit{
+  align-self: end;
+  width: fit-content;
+  padding-right: 1rem;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+
 .galery .modal-box{
   width: 60vw;
   gap: 2rem;
@@ -2453,7 +2486,11 @@ footer {
 }
 
 
-
+@media only screen and (max-width: 928px) {
+  .galery .contents .image {
+    height: 15rem;
+  }
+}
 
 @media only screen and (max-width: 600px) {
   .picture .contents {
@@ -2644,6 +2681,8 @@ footer {
 }
 .detail-article .text .author img{
   height: 3rem;
+  width: 3rem;
+  border-radius: 20rem;
 }
 .detail-article .text .title{
   font-size: 1.8rem;
@@ -2658,10 +2697,12 @@ footer {
   text-align: justify;
   padding: 0 2rem;
   display: grid;
-  gap: 1rem;
+  gap: 2rem;
 }
 .detail-article .contents .image{
-  width: 60%;
+  width: 50%;
+}
+.detail-article .contents .image img{
   border-radius: 1rem;
 }
 .detail-article .contents .kiri .image{
@@ -2674,4 +2715,22 @@ footer {
 }
 .detail-article .contents .tengah .image{
   width: 100%;
+}
+
+
+@media only screen and (max-width: 928px) {  
+  .detail-article > .image {
+    height: 25rem;
+  }
+  .detail-article .contents{
+    padding: 0 1rem;
+  }
+  .detail-article .text .title{
+    font-size: 1.3rem;
+  }
+  .detail-article .contents .image{
+    width: 60%;
+    border-radius: 1rem;
+  }
+  
 }

@@ -47,6 +47,6 @@ function asdf(){
     allslide(carousel[1],'flex');
   }
 
-  setTimeout(asdf,1000)
+  setTimeout(asdf,2000)
 }
 asdf()
