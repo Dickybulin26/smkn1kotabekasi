@@ -14,7 +14,8 @@
   --putih: #f0ebeb;
   --putih-redup: #606060;
   --primary1-background: #f6be2e;
-  --primary2-background: #0ba937;
+  --primary2-background: #007722;
+  /* --primary2-background: #0ba937; cadangan warna*/
 
   --padding-container: 5rem;
 }
@@ -676,6 +677,18 @@ header {
   font-size: 2.5rem;
 }
 .hero .text .title span {
+  background: #007722;
+  background: linear-gradient(
+    to right,
+    #007722 0%,
+    #007722 33%,
+    #f6be2e 80%,
+    #f6be2e 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+/* .hero .text .title span {
   background: #00ff10;
   background: linear-gradient(
     to right,
@@ -686,7 +699,7 @@ header {
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-}
+} */
 .hero .text .info {
   display: grid;
   grid-template-columns: 5rem 5rem 5rem;
@@ -911,7 +924,7 @@ header {
   transform: skew(-40deg);
 }
 .artikel .contents .content:hover {
-  color: var(--putih);
+  color: var(--hitam);
 }
 .artikel .contents .content:hover:before {
   background: var(--primary1-background);
