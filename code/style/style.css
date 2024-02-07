@@ -666,6 +666,7 @@ header {
   display: grid;
   grid-template-columns: 1fr 1fr;
   padding: 1rem 0;
+  gap: 5rem;
 }
 .hero .text {
   display: flex;
@@ -688,18 +689,6 @@ header {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-/* .hero .text .title span {
-  background: #00ff10;
-  background: linear-gradient(
-    to right,
-    #00ff10 0%,
-    #00ff00 33%,
-    #c3e800 80%,
-    #ffd900 100%
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-} */
 .hero .text .info {
   display: grid;
   grid-template-columns: 5rem 5rem 5rem;
@@ -708,12 +697,11 @@ header {
 .hero .text .info .number {
   font-size: 2rem;
 }
+/* -----COMPANY----- */
+/* 
 .hero img {
   width: 10rem;
 }
-
-/* -----COMPANY----- */
-
 .company-provile {
   margin-top: -5rem;
   justify-self: center;
@@ -728,9 +716,10 @@ header {
   left: 0rem;
   position: absolute;
   transform: rotate(-10deg);
-}
+} */
 
 /* -----SLIDER ----- */
+/* 
 .carousel-container {
   width: 70%;
   height: 13rem;
@@ -778,8 +767,87 @@ header {
   padding: 0.5rem;
   border-radius: 0.5rem;
   backdrop-filter: blur(1rem);
+} */
+*{
+  /* border: 1px solid black; */
 }
-
+.carousel a {
+  padding: .3rem 1rem;
+  border: 1px solid white;
+  border-radius: 50rem;
+  font-size: .8rem;
+}
+.carousel a i{
+  transform: rotate(-45deg);
+}
+.carousel-container {
+  display: flex;
+  gap: .8rem;
+  overflow: hidden;
+  height: 80%;
+}
+.carousel, .carousel a{
+  color: white;
+}
+.carousel-container .carousel-item{
+  position: relative;
+  transition: 1s cubic-bezier(1, -0.04, 0, 0.96);
+  flex: 1;
+}
+.carousel-container .carousel-item.lebar{
+  flex: 5;
+}
+.carousel-container .carousel-item.lebar .text-slider{
+  opacity: 1;
+}
+.carousel-container .carousel-item.hide {
+  flex: 0;
+}
+.carousel-container .carousel-item .image{
+  height: 100%;
+  border-radius: 1rem;
+  filter: brightness(0.6);
+}
+.carousel-container .text-slider{
+  padding: 2rem;
+  width: 80%;
+  position: absolute;
+  bottom: 50%;
+  translate: 0 50%;
+  opacity: 0;
+  transition: 1s;
+}
+.carousel-container .text-slider img {
+  width: .6rem;
+}
+.carousel-container .text-slider > *{
+  margin: 1rem 0;
+}
+.carousel button{
+  padding: .6rem 1rem;
+  border-radius: 25rem;
+  border: 1px solid black;
+  font-size: 1rem;
+  width: 4rem;
+  display: grid;
+  place-items: center;
+}
+.carousel button img{
+  width: 100%;
+}
+.carousel button:hover {
+  background: #75e71b;
+  color: white;
+  border: none;
+}
+.carousel .nextBtn{
+  transform: rotate(180deg);
+}
+.btn {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+}
 .logo-company {
   margin: 5rem auto 5rem;
   display: flex;
@@ -1362,6 +1430,9 @@ footer {
   .hero {
     font-size: 1rem;
     padding: 0;
+  }
+  .carousel {
+    height: 20rem;
   }
   .category .title .text {
     font-size: 1.5rem;
