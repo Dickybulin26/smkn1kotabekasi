@@ -848,6 +848,37 @@ header {
   gap: 1rem;
   padding: 1rem;
 }
+
+.change-carousel{
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+}
+.garis-carousel{
+  height: 3px;
+  border-radius: 5px;
+  background: #00000022;
+  position: relative;
+}
+.garis-carousel::before{
+  content: "";
+  transition: 1s cubic-bezier(1, -0.04, 0, 0.96);
+  right: 100%;
+  transform: translateX(100%);
+  position: absolute;
+  display: block;
+  width: 40%;
+  height: 4px;
+  background: #0BA937;
+}
+.garis-carousel.tengah::before{
+  right: 50%;
+  transform: translateX(50%);
+}
+.garis-carousel.akhir::before{
+  right: 0;
+  transform: translateX(0);
+}
 .logo-company {
   margin: 5rem auto 5rem;
   display: flex;

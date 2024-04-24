@@ -69,20 +69,44 @@ function nextSlideVer2(card) {
   card.index = (card.index + 1) % card.items.length;
   cardHide = (card.index + 2) % card.items.length;
   showSlideVer2(card,cardHide)
+
+  slideGaris(card.index)
 }
 function previousSlideVer2(card) {
   card.index = (card.index - 1 + card.items.length) % card.items.length;
   cardHide = (card.index - 2 + card.items.length) % card.items.length;
   showSlideVer2(card,cardHide)
+
+  slideGaris(card.index)
 }
+
 const btnnextver2 = document.querySelector('.nextBtn')
 const btnpreviousver2 = document.querySelector('.prevBtn')
+const garis = document.querySelector('.garis-carousel')
+
 function delay(btn) {
   btn.disabled = true;
   setTimeout(() => {
     btn.disabled = false;
   }, 1000);
 }
+
+function slideGaris(index){
+  if (index == 1) {
+    garis.classList.add('tengah')
+    garis.classList.remove('akhir')
+  }
+  else if (index == 2) {
+    garis.classList.add('akhir')
+    garis.classList.remove('tengah')
+  }
+  else {
+    garis.classList.remove('tengah')
+    garis.classList.remove('akhir')
+  }
+}
+
+
 btnnextver2.addEventListener('click', ()=>{
   delay(btnnextver2)
   nextSlideVer2(component.sliderHeroVer2)
