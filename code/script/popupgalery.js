@@ -1,16 +1,16 @@
-const box =document.querySelector('.galery .modal-container')
-const cards =document.querySelectorAll('.galery .content')
-const exit =document.querySelector('.galery .modal-container .exit')
+const boxGalery =document.querySelector('.galery .modal-container')
+const cardsGalery =document.querySelectorAll('.galery .content')
+const exitGalery =document.querySelector('.galery .modal-container .exit')
 
-cards.forEach((card)=>{
+cardsGalery.forEach((card)=>{
     card.addEventListener('click',(e)=>{
-        box.classList.add('active')
+        boxGalery.classList.add('active')
         e.preventDefault()
         document.body.style.overflow = 'hidden'
     })
 })
-exit.addEventListener('click',(e)=>{
-    box.classList.remove('active')
+exitGalery.addEventListener('click',(e)=>{
+    boxGalery.classList.remove('active')
     e.preventDefault()
     document.body.style.overflow = 'initial'
 })
