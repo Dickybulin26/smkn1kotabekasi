@@ -797,9 +797,6 @@ header {
 .carousel-container .carousel-item.lebar{
   flex: 5;
 }
-.carousel-container .carousel-item.lebar .text-slider{
-  opacity: 1;
-}
 .carousel-container .carousel-item.hide {
   flex: 0;
 }
@@ -808,14 +805,18 @@ header {
   border-radius: 1rem;
   filter: brightness(0.6);
 }
-.carousel-container .text-slider{
+
+.carousel-container .carousel-item.lebar .text-slider{
+  opacity: 1;
+  transition: 1s .5s;
+}
+.carousel-container .carousel-item .text-slider{
   padding: 2rem;
   width: 80%;
   position: absolute;
   bottom: 50%;
   translate: 0 50%;
-  opacity: 0;
-  transition: 1s;
+  opacity: 0; 
 }
 .carousel-container .text-slider img {
   width: .6rem;

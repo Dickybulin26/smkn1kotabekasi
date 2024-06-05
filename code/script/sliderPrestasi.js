@@ -1,20 +1,20 @@
 const prestasiCarouselItems = document.querySelectorAll('.carousel-item-auto')
-let prestasiCurrentIndex = 0
+let currentIndexPrestasi = 0
 
 function showSlidePrestasi() {
   prestasiCarouselItems.forEach(item => {
     item.style.display = 'none';
   })
 
-  prestasiCarouselItems[prestasiCurrentIndex].style.display = 'flex';
+  prestasiCarouselItems[currentIndexPrestasi].style.display = 'flex';
 }
 
 function nextSlidePrestasi() {
-  prestasiCurrentIndex = (prestasiCurrentIndex + 1) % prestasiCarouselItems.length;
+  currentIndexPrestasi = (currentIndexPrestasi + 1) % prestasiCarouselItems.length;
   showSlidePrestasi();
 }
 function previousSlide() {
-  prestasiCurrentIndex = (prestasiCurrentIndex - 1 + prestasiCarouselItems.length) % prestasiCarouselItems.length;
+  currentIndexPrestasi = (currentIndexPrestasi - 1 + prestasiCarouselItems.length) % prestasiCarouselItems.length;
   showSlidePrestasi();
 }
 
