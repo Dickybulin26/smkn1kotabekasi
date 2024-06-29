@@ -7,9 +7,11 @@
 ### Project Manager:
 * Bpk. Satria Ade Putra 
 ### WEB Developers:
-* Fariz Dafansyah (absen 9)
-* Muhammad Hafidh Basri (absen 19)
-* Dicky Asqaelani (absen 8)
+* Fariz Dafansyah 
+* Muhammad Hafidh Basri 
+* Dicky Asqaelani 
+* Fadlan Hamsyari
+* Daffa Raivan
 ## **Latar Belakang**
 
 <img src="code/image/bpk-boan.png" />
